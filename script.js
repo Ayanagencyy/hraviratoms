@@ -178,6 +178,7 @@ function changeLng() {
                 el.innerHTML = LngArr[key][hash];
             }
         });
+
     }
 }
 

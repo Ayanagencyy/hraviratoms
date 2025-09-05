@@ -143,7 +143,7 @@ body {
 
 .audiobtn:hover {
     opacity: 1;
-    transform: scale(1.1) !important;
+    /* transform: scale(1.1) !important; */
 }
 
 .convert,
@@ -213,8 +213,8 @@ body {
 
 .headertext1 {
     position: absolute;
-    top: 55%;
-    right: -80%;
+    top: 58%;
+    left: -80%;
     transform: translate(-50%, -50%);
     z-index: 1;
     animation: text1 2s linear forwards 3s;
@@ -223,19 +223,19 @@ body {
 .headertext2 {
     position: absolute;
     bottom: -35%;
-    left: 50%;
+    left: 62%;
     font-size: 96px;
     transform: translate(-50%, -50%);
     z-index: 1;
     animation: text2 2s linear forwards 3s;
     color: #DEDAD5;
     font-family: "Bruney";
-
+    opacity: 0.6;
 }
 
 .headertext3 {
     position: absolute;
-    top: 70%;
+    top: 66%;
     left: -50%;
     transform: translate(-50%, -50%);
     z-index: 1;
@@ -279,6 +279,7 @@ body {
 }
 
 .a_a {
+    width: 300px;
     z-index: 1;
     font-size: 46px;
     text-align: center;
@@ -293,6 +294,7 @@ body {
     font-family: "Adobe Clean Serif";
     width: 40px;
     height: 24px;
+    padding: 5px;
     color: #DEDAD5;
     border: #DEDAD5 1px solid;
     border-radius: 50%;
@@ -328,11 +330,11 @@ body {
 
 @keyframes text1 {
     from {
-        right: -80%;
+        left: -80%;
     }
 
     to {
-        right: -22%;
+        left: 29%;
     }
 }
 
@@ -342,7 +344,7 @@ body {
     }
 
     to {
-        bottom: 18%;
+        bottom: 25%;
     }
 }
 
@@ -352,7 +354,7 @@ body {
     }
 
     to {
-        left: 45%;
+        left: 65%;
     }
 }
 
@@ -387,7 +389,7 @@ body {
     }
 
     to {
-        top: 25%;
+        top: 20%;
         opacity: 1;
     }
 }
@@ -418,7 +420,7 @@ body {
 }
 
 .lng-latetext1 {
-    font-family: 'Kotayk-Regular';
+    font-family: 'Bruney';
     font-style: normal;
     font-weight: 100;
     font-size: 40px;
@@ -426,7 +428,7 @@ body {
 }
 
 .lng-latetext2 {
-    font-family: "Noto Sans Armenian";
+    font-family: "Bruney";
     transform: translateY(-5%);
     font-size: 22px;
     font-weight: 100;
@@ -455,7 +457,8 @@ body {
 .lng-ctext2 {
     margin: auto;
     font-size: 48px;
-    font-family: "Kotayk";
+    font-family: "Bruney";
+    font-weight: 400;
 }
 
 #calendar {
@@ -514,15 +517,15 @@ button {
 }
 
 .num {
-    font-size: 40px;
-    font-weight: 700;
-    font-family: "Noto Serif Armenian";
+    font-size: 36px;
+    font-family: "Bruney";
+    font-weight: 100;
 }
 
 .timeName {
     font-size: 20px;
-    font-weight: 400;
-    font-family: "Noto Serif Armenian";
+    font-family: "Bruney";
+    font-weight: 100;
 }
 
 .times.active {
@@ -531,7 +534,7 @@ button {
 }
 
 .timerhead {
-    font-family: "Noto Serif Armenian";
+    font-family: "Bruney";
     font-weight: 800;
 }
 
@@ -573,39 +576,24 @@ button {
     margin-top: 10px;
 }
 
-.border {
-    position: absolute;
-    bottom: 0%;
-    left: 20%;
-    z-index: 1;
-    max-width: 300px;
-    width: 100%;
-    height: 300px;
-    border: 1px solid black;
-    border-radius: 50% 50% 0 0;
-}
-
 .placeimg {
-    position: absolute;
-    top: 0%;
-    right: 5%;
     max-width: 300px;
     width: 100%;
-    height: 300px;
+    height: 100px;
+    margin: 10px;
     z-index: 9;
-    border-radius: 50% 50% 0 0;
 }
 
 .placetexts {
     margin: auto;
-    max-width: 480px;
+    max-width: 280px;
     width: 100%;
     text-align: center;
 }
 
 .placetext {
     font-size: 18px;
-    font-family: "Noto Serif Armenian";
+    font-family: "Bruney";
     font-weight: 400;
 }
 
@@ -613,7 +601,7 @@ button {
     display: block;
     font-size: 18px;
     font-weight: 900;
-    font-family: "Noto Serif Armenian";
+    font-family: "Bruney";
 }
 
 .card {
@@ -637,7 +625,7 @@ a {
     padding: 15px 10px;
     border-radius: 25.5px;
     width: 150px;
-    margin-top: 20px;
+    margin-top: 10px;
     margin-bottom: 40px;
 }
 
@@ -659,14 +647,22 @@ a {
     width: 100%;
 }
 
+.point {
+    margin-top: -60px;
+    width: 10px;
+    height: 10px;
+    background-color: black;
+    border-radius: 50%;
+}
+
 .plan {
     margin: auto;
-    margin-top: 50px;
+    /* margin-top: 50px; */
     width: 83%;
     display: flex;
-    justify-content: space-between;
+    justify-content: start;
     align-items: center;
-    gap: 10px;
+    gap: 30px;
     opacity: 0;
     transform: translateY(0);
     transition: 1s;
@@ -677,17 +673,12 @@ a {
     display: flex;
     justify-content: center;
     align-items: center;
-    column-gap: 10px;
-}
-
-.planimg {
-    width: 52px;
-    height: 75px;
-    border-radius: 22px;
+    /* column-gap: 10px; */
 }
 
 .line {
-    display: block;
+    margin-top: -20px;
+    /* display: block; */
     position: absolute;
     top: 130%;
     left: 50%;
@@ -695,36 +686,35 @@ a {
 }
 
 .plantext {
+    margin: 0;
+    padding: 0;
+    text-align: start;
     width: 85%;
     font-family: "Noto Serif Armenian";
+
 }
 
 .plantext1 {
-    font-size: 28px;
-    line-height: 20px;
-    font-family: "Larrisha Script";
+    margin: 0;
+    padding: 0;
+    font-size: 16px;
+    font-family: "Noto Serif Armenian";
+    font-weight: 400;
+}
+
+.time {
+    margin: 0px;
+    padding: 0;
 }
 
 .plantext2 {
+    margin: 0;
+    padding: 0;
+    font-size: 16px;
     font-weight: 400;
     color: rgb(68, 68, 68);
-}
+    margin-bottom: 30px;
 
-h2 {
-    margin: 0;
-}
-
-h3 {
-    margin: 0;
-}
-
-.plantext>h2 {
-    margin: 4px;
-    font-weight: 1000;
-}
-
-.placetext>h3 {
-    font-weight: normal;
 }
 
 .plan.active {
@@ -829,6 +819,11 @@ h6 {
     opacity: 1;
 }
 
+.mark {
+    font-family: "Bruney";
+    font-weight: 100;
+    font-size: 36px;
+}
 
 @media screen and (max-width : 600px) {
     .converttop {
