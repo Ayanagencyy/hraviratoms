@@ -17,6 +17,7 @@
         href="https://fonts.googleapis.com/css2?family=Bodoni+Moda:ital,opsz,wght@0,6..96,400..900;1,6..96,400..900&family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&family=Oswald:wght@200..700&display=swap"
         rel="stylesheet">
     <script src="script.js" defer></script>
+    
     <title>Հրավիրատոմս</title>
 </head>
 
@@ -27,30 +28,35 @@
             <img class="convertbody" src="4.png" alt="">
         </div>
         <div class="header">
+            <button class="languages" id="lng">RU</button>
+            <div class="date-text">SAVE THE DATE</div>
+            <div class="date">29.09.2025</div>
+            <img src="/Group 36711.svg" alt="" class="a_a">
+            <div class="headertext1 font">Arman</div>
+            <div class="headertext2">&</div>
+            <div class="headertext3 font">Angelina</div>
+        </div>
             <audio id="audioElement" loop class="audio">
                 <source src="Elliot James Reay - I Think They Call This Love.mp3" type="audio/mpeg" />
                 Ваш браузер не поддерживает аудио элемент.
             </audio>
             <div class="audio-controls">
-                <button id="audiobtnRef" class="audiobtn">▶</button>
+                <button  class="audiobtn">
+                    <img class="audiobtnimg" id="audiobtnRef" src="Vector (2).svg" alt="">
+                </button>
             </div>
-            <div class="headertext1 font">Arman</div>
-            <div class="headertext2">&</div>
-            <div class="headertext3 font">Mariam</div>
-            <div class="date"> 22 ՀՈՒՆԻՍԻ 2025</div>
-        </div>
         <div class="later _anim-items">
-            <h1 class="latetext1">Սիրելի' հյուրեր,</h1>
-            <h2 class="latetext2">Ցանկանում ենք Ձեզ հետ կիսել մեր կյանքի կարևորագույն օրերից մեկը։ <br>
+            <h1 class="lng-latetext1">Սիրելի' հյուրեր,</h1>
+            <h2 class="lng-latetext2">Ցանկանում ենք Ձեզ հետ կիսել մեր կյանքի կարևորագույն օրերից մեկը։ <br>
                 Մեծ ուրախությամբ հրավիրում ենք Ձեզ մեր հարսանյաց արարողությանը։</h2>
         </div>
         <div class="calendar _anim-items">
             <h1 class="ctext1">Save the date</h1>
-            <h2 class="ctext2">ՀՈՒՆԻՍ 2025</h2>
+            <h2 class="lng-ctext2">ՍԵՊՏԵՄԲԵՐ 2025</h2>
             <div id="calendar">
             </div>
         </div>
-        <div class="maps">
+        <!-- <div class="maps">
             <div class="card _anim-items">
                 <h1 class="mapheader">Օրակարգ</h1>
                 <div class="place">
@@ -85,8 +91,8 @@
                 <a href="https://maps.apple.com/?address=M-5,%20Armenia&auid=5005541142138644516&ll=40.176939,44.290373&lsp=9902&q=Nor%20Dvin&t=m"
                     target="_blank" class="map">Քարտեզ</a>
             </div>
-        </div>
-        <div class="plans">
+        </div> -->
+        <!-- <div class="plans">
             <div class="plan _anim-items">
                 <div class="planimgs">
                     <img src="plan1.png" alt="" class="planimg">
@@ -122,7 +128,7 @@
                     <h3 class="plantext2">Հարսանեկան խնջույք</h3>
                 </div>
             </div>
-        </div>
+        </div> -->
         <div class="timer _anim-items">
             <h1 class="timerhead">Մնացել է ...</h1>
             <div class="times _anim-items" id="timerContainer">
@@ -164,6 +170,7 @@
     <script>
         document.body.insertAdjacentHTML('afterbegin', <div style="position: fixed; top: 0; left: 0; background: red; color: white; z-index: 9999;">Ширина окна: ${window.innerWidth}px</div>);
     </script>
+    <script src="lng.js" ></script>
 </body>
 
 </html>

@@ -4,6 +4,7 @@ const daysElement = document.getElementById('days');
 const hoursElement = document.getElementById('hours');
 const minutesElement = document.getElementById('minutes');
 const secondsElement = document.getElementById('seconds');
+const lngBtn = document.getElementById('lng')
 
 let isPlaying = false
 
@@ -39,7 +40,8 @@ if (animitems.length > 0) {
 }
 
 let $calendar = document.querySelector('#calendar')
-let days = ['ԵՐԿ', 'ԵՐՔ', 'ՉՐՔ', 'ՀՆԳ', 'ՈՒՐԲ', 'ՇԲԹ', 'ԿԻՐ']
+
+let days = ['MON', 'TUE', 'WED', 'THU', 'FRI', 'SAT', 'SUN']
 
 days.forEach(el => {
     let day = document.createElement('div')
@@ -49,9 +51,10 @@ days.forEach(el => {
     $calendar.appendChild(day)
 })
 
-for (let i = 1; i < 37; i++) {
+for (let i = 1; i < 31; i++) {
     let day = document.createElement('div')
-    let dayNum = i - 6
+    let dayNum = i 
+    // - 7
     let isEmpty = dayNum < 1
 
     day.className = 'block' + (isEmpty ? ' empty' : '')
@@ -62,7 +65,7 @@ for (let i = 1; i < 37; i++) {
 let blocks = document.querySelectorAll('.block');
 
 blocks.forEach(block => {
-    if (block.textContent.trim() === "22") {
+    if (block.textContent.trim() === "29") {
         const heart = document.createElement("div");
         heart.className = "hearth";
         heart.style.backgroundImage = 'url("heart.png")';
@@ -97,13 +100,12 @@ window.addEventListener('DOMContentLoaded', function () {
     const audiobtn = document.getElementById('audiobtnRef');
 
     audiobtn.addEventListener('click', function () {
-        console.log('Audio button clicked');
         if (audioElement.paused) {
             audioElement.play();
-            audiobtn.textContent = '■';
+            audiobtn.src = 'Vector (1).svg';
         } else {
             audioElement.pause();
-            audiobtn.textContent = '▶';
+            audiobtn.src = 'Vector (2).svg';
         }
     });
 
@@ -112,7 +114,7 @@ window.addEventListener('DOMContentLoaded', function () {
 });
 
 
-const targetDate = new Date('2025-06-22T00:00:00');
+const targetDate = new Date('2025-09-29T00:00:00');
 
 function calculateTimeLeft() {
     const difference = targetDate - new Date();
@@ -141,4 +143,42 @@ function updateTimer() {
 }
 
 setInterval(updateTimer, 1000);
-updateTimer(); 
+updateTimer();
+
+lngBtn.addEventListener("click", changeUrll);
+
+function changeUrll() {
+    if (lngBtn.textContent === "RU") {
+        lngBtn.textContent = "AM";
+        location.href = window.location.pathname + "#" + lngBtn.textContent;
+    } else {
+        lngBtn.textContent = "RU";
+        location.href = window.location.pathname + "#" + lngBtn.textContent;
+    }
+    changeLng()
+}
+
+function changeLng() {
+
+
+    let hash = window.location.hash.substring(1);
+
+    if (!hash) {
+        hash = "RU"; 
+        location.href = window.location.pathname + "#" + hash;
+    }
+
+    lngBtn.textContent = hash;
+
+    for (let key in LngArr) {
+        let elems = document.querySelectorAll(".lng-" + key);
+        console.log(key)
+        elems.forEach(el => {
+            if (LngArr[key][hash]) {
+                el.innerHTML = LngArr[key][hash];
+            }
+        });
+    }
+}
+
+changeLng();
