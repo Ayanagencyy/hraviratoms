@@ -871,6 +871,10 @@ h6 {
         width: 100%;
     }
 
+    .later {
+        margin-top: 100px;
+    }
+
     .headertext1 {
         left: -90%;
         animation: text1_2 2s linear forwards 3s;
