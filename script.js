@@ -40,43 +40,44 @@ if (animitems.length > 0) {
 }
 
 let $calendar = document.querySelector('#calendar')
+function renderCalendarDays(lang) {
+    $calendar.innerHTML = ''; 
+    let dayss = LngArr.dayss[lang];
 
-let days = ['MON', 'TUE', 'WED', 'THU', 'FRI', 'SAT', 'SUN']
+    dayss.forEach(el => {
+        let day = document.createElement('div');
+        day.textContent = el;
+        day.className = 'name';
+        $calendar.appendChild(day);
+    });
 
-days.forEach(el => {
-    let day = document.createElement('div')
+    // Создаем числа
+    for (let i = 1; i < 31; i++) {
+        let day = document.createElement('div');
+        let dayNum = i;
+        let isEmpty = dayNum < 1;
 
-    day.textContent = el
-    day.className = 'name'
-    $calendar.appendChild(day)
-})
-
-for (let i = 1; i < 31; i++) {
-    let day = document.createElement('div')
-    let dayNum = i 
-    // - 7
-    let isEmpty = dayNum < 1
-
-    day.className = 'block' + (isEmpty ? ' empty' : '')
-    day.textContent = isEmpty ? '' : dayNum
-    $calendar.appendChild(day)
-}
-
-let blocks = document.querySelectorAll('.block');
-
-blocks.forEach(block => {
-    if (block.textContent.trim() === "29") {
-        const heart = document.createElement("div");
-        heart.className = "hearth";
-        heart.style.backgroundImage = 'url("heart.png")';
-        heart.style.width = '60px';
-        heart.style.height = '60px';
-        heart.style.backgroundSize = 'contain';
-        heart.style.backgroundRepeat = 'no-repeat';
-        block.style.position = "relative";
-        block.appendChild(heart);
+        day.className = 'block' + (isEmpty ? ' empty' : '');
+        day.textContent = isEmpty ? '' : dayNum;
+        $calendar.appendChild(day);
     }
-});
+
+    // Сердечко на 29 число
+    let blocks = document.querySelectorAll('.block');
+    blocks.forEach(block => {
+        if (block.textContent.trim() === "29") {
+            const heart = document.createElement("div");
+            heart.className = "hearth";
+            heart.style.backgroundImage = 'url("heart.png")';
+            heart.style.width = '60px';
+            heart.style.height = '60px';
+            heart.style.backgroundSize = 'contain';
+            heart.style.backgroundRepeat = 'no-repeat';
+            block.style.position = "relative";
+            block.appendChild(heart);
+        }
+    });
+}
 
 function disableScroll() {
     document.body.style.overflow = 'hidden';
@@ -180,6 +181,7 @@ function changeLng() {
         });
 
     }
+    renderCalendarDays(hash);
 }
 
 changeLng();
