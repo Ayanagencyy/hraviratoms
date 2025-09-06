@@ -881,7 +881,7 @@ h6 {
     }
 
     .headertext2 {
-        left: 70%;
+        left: 65%;
         animation: text2_2 2s linear forwards 3s;
     }
 
@@ -959,12 +959,9 @@ h6 {
         font-size: 24px;
     }
 
-    .photos {
-        max-width: 320px;
-    }
 
     .photo {
-        height: 150px;
+        height: 180px;
     }
 
     @keyframes text1_2 {
