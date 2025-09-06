@@ -319,7 +319,7 @@ body {
     width: 80px;
     height: 80px;
     border-radius: 50%;
-    border: 2px black ;
+    border: 2px black solid;
     background-color: transparent;
 }
 
@@ -910,6 +910,10 @@ h6 {
     .placetext {
         margin: auto;
         width: 90%;
+    }
+
+    .a_a {
+        font-size: 36px;
     }
 
     .block {
